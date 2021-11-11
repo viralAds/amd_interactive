@@ -19,7 +19,9 @@
               class="myvideo"
               autoplay
               width="100%"
-              height="100%">
+              height="100%"
+              muted
+            >
               <source src="img/amd.mp4" type="video/mp4" />
             </video>
             <div id="toggleSlider"></div>
@@ -40,64 +42,100 @@
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
                   target="_blank"
-                  rel="noreferrer">
-                  <img src="img/lap1.png" alt="img" />
+                  rel="noreferrer"
+                >
+                  <img src="img/group1.png" alt="img" />
                 </a>
               </div>
               <div class="slides-holder__item">
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
                   target="_blank"
-                  rel="noreferrer">
-                  <img src="img/lap2.png" alt="img" />
+                  rel="noreferrer"
+                >
+                  <img src="img/group2.png" alt="img" />
                 </a>
               </div>
               <div class="slides-holder__item">
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
                   target="_blank"
-                  rel="noreferrer">
-                  <img src="img/lap3.png" alt="img" />
+                  rel="noreferrer"
+                >
+                  <img src="img/group3.png" alt="img" />
                 </a>
               </div>
               <div class="slides-holder__item">
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
                   target="_blank"
-                  rel="noreferrer">
-                  <img src="img/lap4.png" alt="img" />
+                  rel="noreferrer"
+                >
+                  <img src="img/group4.png" alt="img" />
                 </a>
               </div>
             </div>
-            <img id="hide-desc" class="hide-desc" src="img/rarrow.png"
-              alt="rarrrow" onclick="toggleDesc()" />
+            <img
+              id="hide-desc"
+              class="hide-desc"
+              src="img/rarrow.png"
+              alt="rarrrow"
+              onclick="toggleDesc()"
+            />
             <div id="descriptions" class="descriptions">
-              <div class="d-heading">
-                <h2>DETAILS</h2>
-              </div>
               <div class="descriptions__item descriptions__item_visible">
-                <img src="img/details1.png" alt="alpha" />
+                <img src="img/laptop1.png" alt="alpha" />
+                <span class="lap-name">ASUS ROG ZEPHYRUS G14 RAZEN</span>
+                <hr class="seperation" />
+                <span class="lap-name-sub"
+                  >AMD Ryzen 7 4800HS Processor, Octa core</span
+                >
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
-                  target="_blank" rel="noreferrer" class="cta-btn">BUY NOW</a>
+                  target="_blank"
+                  rel="noreferrer"
+                  class="cta-btn"
+                  >BUY NOW</a
+                >
               </div>
               <div class="descriptions__item">
-                <img src="img/details2.png" alt="Pavilion" />
+                <img src="img/laptop2.png" alt="Pavilion" />
+                <span class="lap-name">ASUS ROG STRIX G15</span>
+                <hr class="seperation" />
+                <span class="lap-name-sub">AMD Ryzen 9 Octa core</span>
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
-                  target="_blank" rel="noreferrer" class="cta-btn">BUY NOW</a>
+                  target="_blank"
+                  rel="noreferrer"
+                  class="cta-btn"
+                  >BUY NOW</a
+                >
               </div>
               <div class="descriptions__item">
-                <img src="img/details3.png" alt="rog" />
+                <img src="img/laptop3.png" alt="rog" />
+                <span class="lap-name">HP PAVILION GAMING RYZEN 7</span>
+                <hr class="seperation" />
+                <span class="lap-name-sub">AMD Ryzen 7 Octa core</span>
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
-                  target="_blank" rel="noreferrer" class="cta-btn">BUY NOW</a>
+                  target="_blank"
+                  rel="noreferrer"
+                  class="cta-btn"
+                  >BUY NOW</a
+                >
               </div>
               <div class="descriptions__item">
-                <img src="img/details4.png" alt="strix" />
+                <img src="img/laptop4.png" alt="strix" />
+                <span class="lap-name">MSI ALPHA 15 RYZEN 7</span>
+                <hr class="seperation" />
+                <span class="lap-name-sub">AMD Ryzen 7 Octa core GDDR6</span>
                 <a
                   href="https://www.amd.com/en/products/ryzen-processors-laptop"
-                  target="_blank" rel="noreferrer" class="cta-btn">BUY NOW</a>
+                  target="_blank"
+                  rel="noreferrer"
+                  class="cta-btn"
+                  >BUY NOW</a
+                >
               </div>
             </div>
           </div>
@@ -115,13 +153,15 @@
                 data-state="play"
                 class="fa fa-play"
                 aria-hidden="true"
-                onclick="playVideo()"></i>
+                onclick="playVideo()"
+              ></i>
               <i
                 id="pause"
                 data-state="pause"
                 class="fa fa-pause"
                 aria-hidden="true"
-                onclick="pauseVideo()"></i>
+                onclick="pauseVideo()"
+              ></i>
               <span id="current_time" class="time">0.0</span>
               <span class="time"> / </span>
               <span class="time" id="video_duration"></span>
@@ -131,12 +171,14 @@
                 id="mute"
                 class="fa fa-volume-down"
                 aria-hidden="true"
-                onclick="muteVideo()"></i>
+                onclick="muteVideo()"
+              ></i>
               <i
                 id="unmute"
                 class="fa fa-volume-up"
                 aria-hidden="true"
-                onclick="unmuteVideo()"></i>
+                onclick="unmuteVideo()"
+              ></i>
             </div>
           </div>
         </div>
@@ -145,6 +187,7 @@
     <script src="js/circular-slider.js"></script>
     <script
       defer
-      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+    ></script>
   </body>
 </html>

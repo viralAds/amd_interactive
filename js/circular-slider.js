@@ -126,8 +126,8 @@
         "px ) rotate( " +
         ((this.stepAngle * 180) / Math.PI) * i +
         "deg )";
-      this.slides[i].style.width = '100%'
-        // this.wrapper.parentNode.getBoundingClientRect().height * 0.28 + "px";
+      this.slides[i].style.width = "100%";
+      // this.wrapper.parentNode.getBoundingClientRect().height * 0.28 + "px";
       // this.slides[i].style.aspectRation = 266 / 472;
       // 266 / 472
     }
@@ -321,18 +321,30 @@ function pageLoaded() {
     "timeupdate",
     onVideoTimeUpdate(video, video.duration)
   );
+  const progressbar = document.getElementById("progress");
+  progressbar.addEventListener("click", seekto);
 }
 
 function onVideoTimeUpdate(video, duration) {
   document.getElementById("current_time").innerHTML = Math.floor(
     video.currentTime
   ).toFixed(2);
+  
   document.getElementById("progress").value = video.currentTime / duration;
   if ((video.currentTime / 60).toFixed(2) > 0.54) {
     document.getElementsByClassName("controls")[0].style.display = "none";
     document.getElementsByClassName("slides-holder")[0].style.display = "none";
     document.getElementsByClassName("descriptions")[0].style.display = "none";
   }
+}
+
+function seekto(event) {
+  console.log("seekto", (event.clientX / event.srcElement.offsetWidth));
+  const video = document.getElementById("myvideo");
+  video.pause()
+  video.currentTime = ((event.clientX / event.srcElement.offsetWidth) * 100)
+  document.getElementById("progress").value =
+    (event.clientX / event.srcElement.offsetWidth);
 }
 
 function toggleSlider() {
@@ -353,12 +365,12 @@ function toggleSlider() {
 }
 
 function toggleDesc() {
-  let toggler = document.getElementById("hide-desc")
+  let toggler = document.getElementById("hide-desc");
   if (toggler.style.transform === "rotate(0deg)") {
     toggler.style.transform = "rotate(180deg)";
-    document.getElementById("descriptions").style.visibility = "hidden"
+    document.getElementById("descriptions").style.visibility = "hidden";
   } else {
     toggler.style.transform = "rotate(0deg)";
-    document.getElementById("descriptions").style.visibility = "visible"
+    document.getElementById("descriptions").style.visibility = "visible";
   }
 }
