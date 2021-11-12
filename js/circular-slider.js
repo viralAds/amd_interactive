@@ -312,7 +312,7 @@ function unmuteVideo() {
 function loadMeta() {
   var video_duration = document.getElementById("myvideo").duration;
   document.getElementById("video_duration").innerHTML =
-    Math.ceil(video_duration).toFixed(2);
+    Math.floor(video_duration).toFixed(2);
 }
 
 function pageLoaded() {
@@ -329,7 +329,7 @@ function onVideoTimeUpdate(video, duration) {
   document.getElementById("current_time").innerHTML = Math.floor(
     video.currentTime
   ).toFixed(2);
-  
+
   document.getElementById("progress").value = video.currentTime / duration;
   if ((video.currentTime / 60).toFixed(2) > 0.54) {
     document.getElementsByClassName("controls")[0].style.display = "none";
@@ -339,12 +339,14 @@ function onVideoTimeUpdate(video, duration) {
 }
 
 function seekto(event) {
-  console.log("seekto", (event.clientX / event.srcElement.offsetWidth));
   const video = document.getElementById("myvideo");
-  video.pause()
-  video.currentTime = ((event.clientX / event.srcElement.offsetWidth) * 100)
+  video.pause();
+  video.currentTime = Math.floor(
+    (event.clientX / event.srcElement.offsetWidth) * video.duration.toFixed(2)
+  );
+  video.play();
   document.getElementById("progress").value =
-    (event.clientX / event.srcElement.offsetWidth);
+    event.clientX / event.srcElement.offsetWidth;
 }
 
 function toggleSlider() {
