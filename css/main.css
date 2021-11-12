@@ -150,7 +150,7 @@ table {
 
 .slider {
   position: relative;
-  width: 90%;
+  height: 80%;
   aspect-ratio: 16 / 9;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
