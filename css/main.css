@@ -144,7 +144,7 @@ table {
   display: flex;
   position: relative;
   background-color: #ffffff;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
