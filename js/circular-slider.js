@@ -341,12 +341,10 @@ function onVideoTimeUpdate(video, duration) {
 function seekto(event) {
   const video = document.getElementById("myvideo");
   video.pause();
-  video.currentTime = Math.floor(
-    (event.clientX / event.srcElement.offsetWidth) * video.duration.toFixed(2)
-  );
+  video.currentTime =
+    (event.clientX / event.srcElement.offsetWidth).toFixed(2) * video.duration;
+  console.log(event.clientX, event.srcElement.offsetWidth);
   video.play();
-  document.getElementById("progress").value =
-    event.clientX / event.srcElement.offsetWidth;
 }
 
 function toggleSlider() {
