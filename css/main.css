@@ -145,7 +145,7 @@ table {
   position: relative;
   background-color: #ffffff;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
 }
 .slider {
   position: relative;
