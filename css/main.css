@@ -147,13 +147,24 @@ table {
   justify-content: flex-start;
   align-items: center;
 }
-
 .slider {
   position: relative;
   height: 80%;
+  width: auto;
   aspect-ratio: 16 / 9;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px) {
+  .slider {
+    position: relative;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
 }
 
 .circular-slider {
